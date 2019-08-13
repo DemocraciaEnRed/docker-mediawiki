@@ -38,6 +38,7 @@ services:
       - 8080:80
     volumes:
       - ./volume:/var/www/html/images
+      - ./volume/LocalSettings.php:/var/www/html/LocalSettings.php
     restart: always
 
 networks:
