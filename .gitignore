@@ -1,5 +1,6 @@
 # Volume directory
-volume
+volume/*
+!volume/LocalSettings.php
 
 # vim
 .swp

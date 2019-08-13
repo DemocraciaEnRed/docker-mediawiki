@@ -21,7 +21,7 @@ fi
 
 
 # Verificar si esta es la primera vez que corre el container segun el nombre de LocalSettings.php.
-if [ ! -f LocalSettings.php ]
+if [ ! -s LocalSettings.php ]
 then
   php maintenance/install.php \
     --confpath "/" \
