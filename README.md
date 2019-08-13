@@ -40,3 +40,11 @@ El servicio esta expuesto en el puerto 80.
 ## Volumenes
 
 Esta aplicacion requiere persistencia para los ficheros subidos a `/var/www/html/images` y para `LocalSettings.php`, ver ejemplo en `docker-compose.yml`.
+
+## Ejemplo
+
+Se incluye un `docker-compose.yml` donde se ejemplifican todos los componentes anteriores. Es necesario utilizar una base de datos y una docker network dentro del compose.
+
+**NOTA**
+
+Se incluye variables para configurar parsoid aunque no se incluyen esos detalles en este repositorio.
