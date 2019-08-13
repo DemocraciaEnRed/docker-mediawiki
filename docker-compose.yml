@@ -1,0 +1,45 @@
+version: '3'
+services:
+  mysql:
+    image: mysql:5.7
+    environment:
+      MYSQL_ROOT_PASSWORD: mediawiki-root
+      MYSQL_USER: mediawiki
+      MYSQL_PASSWORD: mediawiki
+      MYSQL_DATABASE: mediawiki
+    networks:
+      - mediawiki
+
+  mediawiki:
+    image: mediawiki:test
+    environment:
+      MW_DB_TYPE: mysql
+      MW_DB_SERVER: mysql
+      MW_DB_NAME: mediawiki
+      MW_DB_USER: mediawiki
+      MW_DB_PASSWORD: mediawiki
+      MW_DB_INSTALLDB_USER: mediawiki
+      MW_DB_INSTALLDB_PASS: mediawiki
+      MW_WEB_PATH: /
+      MW_SITE_LANG: es
+      MW_ADMIN_USER: admin
+      MW_ADMIN_PASS: mediawiki
+      MW_PARSOID_URL: http://parsoid:8000
+      MW_REST_DOMAIN: mediawiki
+      PHP_ERROR_REPORTING: E_ALL & ~E_DEPRECATED & ~E_STRICT
+      MW_PARSOID_WIKI_DOMAIN: mediawiki
+      MW_SITE_SERVER: http://localhost
+      MW_SEC_KEY: dbd138b56512b048ee9c22b351a1bba10860d51257222ee312d857a65a1daa99
+      MW_SITE_NAME: Wiki Causas Comunes
+      MW_NOTIFY_USERS: MW_NOTIFY_USERS=Admin
+    networks:
+      - mediawiki
+    ports:
+      - 8080:80
+    volumes:
+      - ./volume:/var/www/html/images
+    restart: always
+
+networks:
+  mediawiki:
+    driver: bridge
