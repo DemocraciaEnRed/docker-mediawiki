@@ -47,4 +47,4 @@ Se incluye un `docker-compose.yml` donde se ejemplifican todos los componentes a
 
 **NOTA**
 
-Se incluye variables para configurar parsoid aunque no se incluyen esos detalles en este repositorio.
+Se incluyen variables para configurar parsoid aunque no se incluyen esos detalles en este repositorio.
